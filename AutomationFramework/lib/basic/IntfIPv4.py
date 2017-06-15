@@ -67,11 +67,12 @@ def createIPv4Intf(args={}):
                     logger.info("IP address could not be configured on %s interface of %s"%(intf,device))
                     StatusList.update({"%s[%s]"%(device,intf) : "FAIL"})
 
-        if "PASS" in StatusList.values():
-            return True
-        else:
-            logger.debug(StatusList)
+        if "FAIL" in StatusList.values():
+	    logger.debug(StatusList)
             return False
+        else:
+	    logger.info(StatusList)
+            return True
     else:
         logger.info("Please specify the list of devices and it's interface ip addresses in the arguments")
         sys.exit(1)
