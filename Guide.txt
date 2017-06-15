@@ -19,5 +19,4 @@ STEP 3> Now that the pre requisites are done, in order to execute robot testcase
 file. This file is in run folder. This file takes two arguments, one is the absolute path to the testbed file and 
 absolute path to the robot testcase file.
 Command:
-<change directory to run>/$sh test.sh /absolute/path/to/testbed/file/testbed_Docker.json /path/to/testCases/usecase/
-TestSuite.robot
+<change directory to run>/$sh test.sh /absolute/path/to/testbed/file/testbed_Docker.json /path/to/testCases/usecase/TestSuite.robot
