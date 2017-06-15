@@ -1,7 +1,5 @@
 # SnaproutePhase1
 Test Automation Framework
-
-
 SNAPROUTE PHASE-1
 This framework is developed for writing automation test suites for FlexSwitch devices.It utilizes the Python SDK provided by the FlexSwitch and uses the easy to learn , quick and fast implementation of Robot Framework for Test Automation. It supports both Docker and Hardware implementation. It can have different testbed files for different test scenarios. 
 The testbed details are saved in JSON format in 'testbed' folder.
