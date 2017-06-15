@@ -56,5 +56,5 @@ Usage and file description:
 		             testbedCheck4:- Checks if duplicate ports are mentioned for same interface in two links
 		             testbedCheck5:- Checks if duplicate ports are mentioned for interfaces of same device in ports list.
 				         Example: correct: "ports" : {                       wrong: "ports"   : {
-					                                  "D1_P1" : "fpPort25",                        "D1_P1" : "fpPort25",
-					                                  "D1_P2" : "fpPort65" }                       "D1_P2" : "fpPort25" }
+				                                  "D1_P1" : "fpPort25",                        "D1_P1" : "fpPort25",
+				                                  "D1_P2" : "fpPort65" }                       "D1_P2" : "fpPort25" }
