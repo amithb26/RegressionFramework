@@ -2,8 +2,8 @@
 Documentation	        A test suite with tests to perform BGP functional tests on DUT
 Metadata 		Version          	 1.0
 ...	         	More Info         	 For more information about Robot Framework see http://robotframework.org
-...               	Author            	 Payal Jain
-...               	Date             	 27 May 2017  
+...               	Author            	 
+...               	Date             	   
 ...	                Executed At  	         ${HOST}
 ...		        Test Framework           Robot Framework Python
 
