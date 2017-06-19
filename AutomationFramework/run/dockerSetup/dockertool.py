@@ -508,7 +508,7 @@ def verify_flexswitch_running(devices, timeout=90, uptime_threshold=10):
         if not device_state[d]["ready"]:
             manually_started = True
             logger.info("timeout expired, restarting flexswitch on %s"%d,also_console = True)
-            exec_cmd("docker exec -it %s service flexswitch start" % d,also_console = True)
+            exec_cmd("docker exec -it %s service flexswitch start" % d)
 
     # best to go through process again to ensure service actually starts
     if manually_started:
