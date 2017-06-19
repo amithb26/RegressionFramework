@@ -142,6 +142,7 @@ Configure LLDP Global
     ${result}=    Run Keyword    updateLLDPGlobal    ${LLDPGlobal}       
     Run Keyword If    ${result}==True    Log    LLDP Enabled on all devices   
     ...    ELSE    Notify    ${result}    One/more device is not enabled with LLDP 
+    Sleep   ${LLDPSleep}
 
 verify L1 connectivity
     [Documentation]    Sets one port down and checks if the connected device

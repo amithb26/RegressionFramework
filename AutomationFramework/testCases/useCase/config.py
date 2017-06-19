@@ -38,7 +38,7 @@ IntfIPDelete = {
                }
 
 #LLDP PARAMETERS ###############
-
+LLDPSleep = 2
 LLDPGlobal = {
               "DUT1" : {
                   "Vrf" : "default",    
