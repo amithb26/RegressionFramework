@@ -13,11 +13,11 @@ Description:
 Sample input: 
 args = {
        "DUT1" : {
-        "Vrf" : "default",       string "KEY", ACCESS:"w", MULTIPLICITY:"1", DESCRIPTION: "LLDP Global Config For Default VRF", DEFAULT:"default", AUTOCREATE:"true"`
-        "TxRxMode" : "TxRx",     string 'DESCRIPTION: "Transmit/Receive mode configruration for the LLDP agent", SELECTION:"TxOnly/RxOnly/TxRx", DEFAULT:"TxRx"`
-        "Enable" : True,         bool 'DESCRIPTION: "Enable/Disable LLDP Globally", DEFAULT:false'
-        "TranmitInterval" : 30   int32 'DESCRIPTION: "LLDP Re-Transmit Interval in seconds", DEFAULT:30'
-        "SnoopAndDrop" : False   bool 'DESCRIPTION: "Operational mode to determine whether LLDP traffic is bi-directionally forwarded. This configuration is only available on select platforms", DEFAULT:false'
+        "Vrf" : "default",       string       "KEY", ACCESS:"w", MULTIPLICITY:"1", DESCRIPTION: "LLDP Global Config For Default VRF", DEFAULT:"default",    					              AUTOCREATE:"true"`
+        "TxRxMode" : "TxRx",     string      'DESCRIPTION: "Transmit/Receive mode configruration for the LLDP agent", SELECTION:"TxOnly/RxOnly/TxRx",     					              DEFAULT :  "TxRx"`
+        "Enable" : True,         bool        'DESCRIPTION: "Enable/Disable LLDP Globally", DEFAULT:false'
+        "TranmitInterval" : 30   int32       'DESCRIPTION: "LLDP Re-Transmit Interval in seconds", DEFAULT:30'
+        "SnoopAndDrop" : False   bool        'DESCRIPTION: "Operational mode to determine whether LLDP traffic is bi-directionally forwarded. This 						     configuration is only available on select platforms", DEFAULT:false'
                 },
        "DUT2" : {
         "Vrf" : "default",    
@@ -93,8 +93,7 @@ def verifyConnectivity(args=[]):
     LLDPIntfList = []
     if args:
         for device in args:
-	     alldetails.update({device : {}})
-             DeviceIP = getMgmtIP(device)
+	     DeviceIP = getMgmtIP(device)
 	     Username = getUsername(device)
              if Username == "None" or Username == "":
                  Username = None
@@ -110,9 +109,9 @@ def verifyConnectivity(args=[]):
                  LLDPIntfList.append(connectedDevices["Object"]["PeerPort"])
              for expectedPort in args[device]:
                  if expectedPort not in LLDPIntfList:
-                     alldetails[device][expectedPort] = "Not Found"
+                     alldetails.update({"%s_%s"%(device,expectedPort) : "Not Found"})
                  else:
-                     alldetails[device][expectedPort] = "Found"
+                     alldetails.update({"%s_%s"%(device,expectedPort) : "Found"})
              LLDPIntfList = []
         logger.info(alldetails)
         if "Not Found" in alldetails.values():
